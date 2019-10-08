@@ -17,14 +17,5 @@ namespace ClassesIntro
         {
             MessageBox.Show("Bark");
         }
-
-        public Dog() { }
-
-        public Dog(string breed, int height, string name)
-        {
-            this.Breed = breed;
-            this.Height = height;
-            this.Name = name;
-        }
     }
 }

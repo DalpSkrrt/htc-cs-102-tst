@@ -14,9 +14,15 @@ namespace MovieApplication
         public string Genre;
         public double ReviewScore;
 
-        public void Watch()
+        public Movie(string title, string genre, double reviewScore) {
+            Title = title;
+            Genre = genre;
+            ReviewScore = reviewScore;
+        }
+
+        public void DisplayInformation()
         {
-            
+            MessageBox.Show($"Title: {Title} \n Genre:{Genre} \n ReviewScore:{ReviewScore}");
         }
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="363" Width="672">
-    <Grid Margin="0,0,-7,1" RenderTransformOrigin="0.517,0.545" Height="331" VerticalAlignment="Bottom">
+        Title="MainWindow" Height="600" Width="937">
+    <Grid Margin="14,0,-5,-47" RenderTransformOrigin="0.517,0.545" Height="558" VerticalAlignment="Bottom">
         <Grid.RenderTransform>
             <TransformGroup>
                 <ScaleTransform/>
@@ -16,29 +16,48 @@
             </TransformGroup>
         </Grid.RenderTransform>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="564*"/>
-            <ColumnDefinition Width="99*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="574*"/>
+            <ColumnDefinition Width="226*"/>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="23" Margin="85,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
-        <Label x:Name="titleLabel" Content="Title" HorizontalAlignment="Left" Margin="85,38,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
-        <Label x:Name="genreLabel" Content="Genre" HorizontalAlignment="Left" Margin="85,120,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
-        <TextBox x:Name="genreTextBox" HorizontalAlignment="Left" Height="23" Margin="85,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="reviewScoreLabel" Content="Review Score" HorizontalAlignment="Left" Margin="85,193,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.077" Height="26" Width="79"/>
-        <TextBox x:Name="reviewScoreTextBox" HorizontalAlignment="Left" Height="23" Margin="85,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="submitMovieButton" Content="Submit" HorizontalAlignment="Left" Margin="89,277,0,0" VerticalAlignment="Top" Width="75" Click="submitMovieButton_Click" RenderTransformOrigin="-0.027,1.3" Height="20"/>
-        <ListView x:Name="movieListView" HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="364" Margin="228,44,0,0" FontFamily="Consolas" FontStyle="Italic" FontSize="14" BorderThickness="5" Background="#FF78D3EE" Grid.ColumnSpan="2" SelectionChanged="listView_SelectionChanged">
+        <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="23" Margin="30,-4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="titleLabel" Content="Title" HorizontalAlignment="Left" Margin="30,-30,0,0" VerticalAlignment="Top" Height="26" Width="32"/>
+        <Label x:Name="genreLabel" Content="Genre" HorizontalAlignment="Left" Margin="30,52,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
+        <TextBox x:Name="genreTextBox" HorizontalAlignment="Left" Height="23" Margin="30,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="reviewScoreLabel" Content="Review Score" HorizontalAlignment="Left" Margin="30,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.077" Height="26" Width="79"/>
+        <TextBox x:Name="reviewScoreTextBox" HorizontalAlignment="Left" Height="23" Margin="30,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="submitMovieButton" Content="Submit" HorizontalAlignment="Left" Margin="30,424,0,0" VerticalAlignment="Top" Width="98" Click="submitMovieButton_Click" RenderTransformOrigin="-0.027,1.3" Height="36"/>
+        <ListView x:Name="movieListView" HorizontalAlignment="Left" Height="233" VerticalAlignment="Top" Width="618" Margin="207,-22,0,0" FontFamily="Consolas" FontStyle="Italic" FontSize="14" BorderThickness="5" Background="#FF78D3EE" SelectionChanged="listView_SelectionChanged" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" MouseDoubleClick="movieListView_MouseDoubleClick">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.271"/>
+                    <RotateTransform Angle="-0.215"/>
+                    <TranslateTransform Y="0.99"/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="Title" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
                     <GridViewColumn Width="100" Header="Genre" DisplayMemberBinding="{Binding Genre}"></GridViewColumn>
                     <GridViewColumn Width="100" Header="Review Score" DisplayMemberBinding="{Binding ReviewScore}"></GridViewColumn>
+                    <GridViewColumn Width="100" Header="Length" DisplayMemberBinding="{Binding Length}"></GridViewColumn>
+                    <GridViewColumn Width="150" Header="Director" DisplayMemberBinding="{Binding Director}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label x:Name="reviewScoreLabel_Copy" Content="Length" HorizontalAlignment="Left" Margin="30,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.077" Height="26" Width="79"/>
+        <Label x:Name="reviewScoreLabel_Copy1" Content="Director" HorizontalAlignment="Left" Margin="30,276,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.077" Height="26" Width="79"/>
+        <TextBox x:Name="lengthTextBox" HorizontalAlignment="Left" Height="23" Margin="30,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="directorTextBox" HorizontalAlignment="Left" Height="23" Margin="30,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="currentTextBlock" HorizontalAlignment="Center" Margin="338,231,144,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="290" FontSize="24" Grid.ColumnSpan="2" FontStyle="Italic"/>
+        <Image x:Name="currentPoster" HorizontalAlignment="Left" Height="203" Margin="376,276,0,0" VerticalAlignment="Top" Width="193" Grid.ColumnSpan="2" RenderTransformOrigin="0.581,0.478"/>
+        <TextBox x:Name="filePathTextBox" HorizontalAlignment="Left" Height="23" Margin="30,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="reviewScoreLabel_Copy2" Content="File Path" HorizontalAlignment="Left" Margin="30,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.077" Height="26" Width="79"/>
 
     </Grid>
 </Window>

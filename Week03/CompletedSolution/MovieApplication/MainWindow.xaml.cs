@@ -37,13 +37,15 @@ namespace MovieApplication
         private void submitMovieButton_Click(object sender, RoutedEventArgs e)
         {
             
-            Movie submittedMovie = new Movie(titleTextBox.Text, genreTextBox.Text, Double.Parse(reviewScoreTextBox.Text));
+            Movie submittedMovie = new Movie(titleTextBox.Text, genreTextBox.Text, Double.Parse(reviewScoreTextBox.Text), directorTextBox.Text, Double.Parse(lengthTextBox.Text), filePathTextBox.Text);
             movieList.Add(submittedMovie);
-            submittedMovie.DisplayInformation();
+           // submittedMovie.DisplayInformation();
             titleTextBox.Clear();
             genreTextBox.Clear();
             reviewScoreTextBox.Clear();
-
+            directorTextBox.Clear();
+            lengthTextBox.Clear();
+            filePathTextBox.Clear();
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,6 +56,16 @@ namespace MovieApplication
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void movieListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Movie selectedMovie = movieListView.SelectedItem as Movie;
+            // selectedMovie.DisplayInformation();
+            //   BitmapImage currentPoster = new BitmapImage(new Uri(filePathTextBox.Text, UriKind.Relative));
+            // currentPoster.UriSource = new Uri(filePathTextBox.Text, UriKind.Relative);
+            currentPoster.Source = new BitmapImage(
+                new Uri(filePathTextBox.Text));
         }
     }
 }

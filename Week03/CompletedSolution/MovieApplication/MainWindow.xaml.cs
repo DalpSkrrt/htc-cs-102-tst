@@ -61,11 +61,9 @@ namespace MovieApplication
         private void movieListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Movie selectedMovie = movieListView.SelectedItem as Movie;
-            // selectedMovie.DisplayInformation();
-            //   BitmapImage currentPoster = new BitmapImage(new Uri(filePathTextBox.Text, UriKind.Relative));
-            // currentPoster.UriSource = new Uri(filePathTextBox.Text, UriKind.Relative);
-            currentPoster.Source = new BitmapImage(
-                new Uri(filePathTextBox.Text));
+            currentTextBlock.Text = selectedMovie.Title;
+            currentPoster.Source = new BitmapImage(new Uri(selectedMovie.FilePath));
+           
         }
     }
 }

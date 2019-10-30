@@ -15,6 +15,7 @@ namespace MovieApplication
         public double ReviewScore { get; set; }
         public double Length { get; set; }
         public string FilePath { get; set; }
+        
 
 
         public List<string> Actors;

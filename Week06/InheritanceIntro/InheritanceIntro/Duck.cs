@@ -2,20 +2,21 @@
 
 namespace InheritanceIntro
 {
-    public class Dog : Animal
+    public class Duck : Animal
     {
-        public void Bark()
+        public void Quack()
         {
-            MessageBox.Show("Bark");
+            MessageBox.Show("Quack");
         }
-        public Dog(int height, string name)
+        public Duck(int height, string name)
         {
             this.Height = height;
             this.Name = name;
         }
 
-        public Dog()
+        public Duck()
         {
         }
     }
 }
+

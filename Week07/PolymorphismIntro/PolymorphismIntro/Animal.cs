@@ -9,8 +9,14 @@ namespace PolymorphismIntro
 {
     public class Animal
     {
-        public int Height;
-        public string Name;
+        public int Height { get; set; }
+        public string Name { get; set; }
+        public int Weight { get; set; }
+
+        public virtual void Speak()
+        {
+
+        }
 
         public void SayName()
         {

@@ -16,6 +16,7 @@ namespace InheritanceIntro
 
         public Dog()
         {
+
         }
     }
 }

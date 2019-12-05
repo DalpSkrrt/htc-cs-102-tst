@@ -32,7 +32,7 @@ namespace InterfacesIntro
             // make siome aminals
             Frog frog = new Frog(4,"Bart",true);
             Dog dog = new Dog("Labradoodle", 35, "Pax");
-            Duck duck = new Duck(4, "Moo");
+            Duck duck = new Duck(4, "Donald");
 
             Animals.Add(frog);
             Animals.Add(dog);

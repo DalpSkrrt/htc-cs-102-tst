@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InheritanceIntro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="300">
+        Title="MainWindow" Height="650" Width="328.888">
     <StackPanel>
         <Button Click="SayName_Button_Click">Say Name</Button>
-        <ListView x:Name="lvAnimals" Height="100" MouseDoubleClick="LvAnimals_MouseDoubleClick">
+        <ListView x:Name="lvAnimals" Height="155" MouseDoubleClick="LvAnimals_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding Name}"/>
@@ -16,5 +16,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Canvas Height="100"/>
     </StackPanel>
 </Window>
